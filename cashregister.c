@@ -6,10 +6,6 @@ int currentBalance(int total, int Bal)
 {
 	int newBal, remBal;
 	
-	Bal = 0;
-	
-	system("cls");
-	
 	printf("\nPlease deposit JPY %d: ", total);
 	scanf("%d", &newBal);
 	
