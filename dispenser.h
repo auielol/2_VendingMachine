@@ -2,6 +2,6 @@
 #include <conio.h>
 #include <windows.h>
 
-int getCount(int NoOfItems, int select);
-int getProductCost(int cost, int NoOfItems);
-int makeSale(int total);
+int getCount(int noOfItems, int select);
+int getProductCost(int cost, int noOfItems);
+int makeSale(int total, int noOfItems);

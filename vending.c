@@ -13,9 +13,9 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
-int showSelection(int menu)
+int showSelection()
 {
-	int select;
+	int select, noOfItems;
 	
 	printf("\nPlease Choose from the Selection");
 	
@@ -23,17 +23,10 @@ int showSelection(int menu)
 	printf("\n[2] SNACK (JPY 100)");
 	printf("\n[3] TOY (JPY 200)");
 	printf("\n[4] MANGA (JPY 500)");
-	printf("\n[5] Exit");
+	printf("\n[5] Shut Down");
 	
 	printf("\n\nSelection: ");
 	scanf("%d", &select);
-	
-	selectionChoice(select);
-}
-
-int selectionChoice(int select)
-{
-	int NoOfItems;
 	
 	switch(select)
 	{
@@ -41,33 +34,41 @@ int selectionChoice(int select)
 			system("cls");
 			
 			printf("\nHow many BEVERAGES would you like to purchase: ");
-			scanf("%d", &NoOfItems);
+			scanf("%d", &noOfItems);
 			
-			sellProduct(NoOfItems, select);
+			system("cls");
+			
+			sellProduct(noOfItems, select);
 			break;
 		case 2:
 			system("cls");
 			
 			printf("\nHow many SNACKS would you like to purchase: ");
-			scanf("%d", &NoOfItems);
+			scanf("%d", &noOfItems);
 			
-			sellProduct(NoOfItems, select);
+			system("cls");
+			
+			sellProduct(noOfItems, select);
 			break;
 		case 3:
 			system("cls");
 			
 			printf("\nHow many TOYS would you like to purchase: ");
-			scanf("%d", &NoOfItems);
+			scanf("%d", &noOfItems);
 			
-			sellProduct(NoOfItems, select);
+			system("cls");
+			
+			sellProduct(noOfItems, select);
 			break;
 		case 4:
 			system("cls");
 			
 			printf("\nHow many MANGAS would you like to purchase: ");
-			scanf("%d", &NoOfItems);
+			scanf("%d", &noOfItems);
 			
-			sellProduct(NoOfItems, select);
+			system("cls");
+			
+			sellProduct(noOfItems, select);
 			break;
 		case 5:
 			return 0;
@@ -75,12 +76,12 @@ int selectionChoice(int select)
 				printf("INVALID INPUT\n");
 				system("pause");
 				system("cls");
-				showSelection(select);
+				showSelection();
 	}
 }
 
-int sellProduct(int NoOfItems, int select)
+int sellProduct(int noOfItems, int select)
 {
-	getCount(NoOfItems, select);
+	getCount(noOfItems, select);
 }
 

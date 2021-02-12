@@ -2,7 +2,7 @@
 #include "dispenser.h"
 #include "cashregister.h"
 
-int getCount(int NoOfItems, int select)
+int getCount(int noOfItems, int select)
 {
 	struct Inventory beverage;
 	{
@@ -38,7 +38,7 @@ int getCount(int NoOfItems, int select)
 			}
 			else
 			{
-				getProductCost(beverage.cost, NoOfItems);
+				getProductCost(beverage.cost, noOfItems);
 				
 				break;
 			}
@@ -53,7 +53,7 @@ int getCount(int NoOfItems, int select)
 			}
 			else
 			{
-				getProductCost(snack.cost, NoOfItems);
+				getProductCost(snack.cost, noOfItems);
 				
 				break;
 			}
@@ -68,7 +68,7 @@ int getCount(int NoOfItems, int select)
 			}
 			else
 			{
-				getProductCost(toy.cost, NoOfItems);
+				getProductCost(toy.cost, noOfItems);
 				
 				break;
 			}
@@ -83,25 +83,25 @@ int getCount(int NoOfItems, int select)
 			}
 			else
 			{
-				getProductCost(manga.cost, NoOfItems);
+				getProductCost(manga.cost, noOfItems);
 				
 				break;
 			}
 	}
 }
 
-int getProductCost (int cost, int NoOfItems)
+int getProductCost (int cost, int noOfItems)
 {
 	int total;
 	
-	total = NoOfItems*cost;
+	total = noOfItems*cost;
 	
-	makeSale(total);
+	makeSale(total, noOfItems);
 }
 
-int makeSale(int total)
+int makeSale(int total, int noOfItems)
 {
-	currentBalance(total, 0);
+	currentBalance(total, 0, noOfItems);
 	
 	return 0;
 }

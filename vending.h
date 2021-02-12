@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int showSelection(int menu);
-int selectionChoice(int select);
-int sellProduct(int NoOfItems, int select);
+int showSelection();
+int sellProduct(int noOfItems, int select);
 
 struct Inventory
 {

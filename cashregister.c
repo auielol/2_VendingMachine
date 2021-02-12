@@ -2,43 +2,68 @@
 #include "dispenser.h"
 #include "cashregister.h"
 
-int currentBalance(int total, int Bal)
+int currentBalance(int total, int bal, int noOfItems)
 {
-	int newBal, remBal;
+	int newBal, remBal, tries, refund;
 	
-	printf("\nPlease deposit JPY %d: ", total);
-	scanf("%d", &newBal);
-	
-	Bal = Bal + newBal;
-	
-	calculateBalance(remBal, Bal, total);
-}
-
-int calculateBalance(int remBal, int Bal, int total)
-{
-	if (Bal == total)
+	for (tries = 0; tries < 2; tries++)
 	{
-		return acceptMoney();
+		printf("\nPlease deposit JPY %d: ", total);
+		scanf("%d", &newBal);
+		
+		bal = bal + newBal;
+		remBal = total - bal;
+		
+	if (bal == total)
+	{
+		return acceptMoney(noOfItems);
 	}
-	else if (Bal < total)
+	else if (bal < total)
 	{
+		system("cls");
+		
 		printf("\nInsufficient Money. \nRemaining Balance: %d\n", remBal);
-		
-		return currentBalance(total, Bal);
 	}
-	else if (Bal > total)
+	else if (bal > total)
 	{
-		Bal = Bal - total;
+		system("cls");
 		
-		printf("\nPlease Take Your Change: %d", Bal);
-		printf("\nIf change is insufficient, please inform the staff.");
+		printf("\nPlease Take Your Change: JPY %d", getChange(bal, total));
+		printf("\n\nIf change is insufficient, please inform the staff.");
 	}
+	}
+	refund = bal;
+	
+	system("cls");
+	
+	printf("\nInsufficient Money. Money Refunded: JPY %d", refund);
+	
+	printf("\n\n");
+	
+	system("pause");
+	system("cls");
+	
+	return main();
+}
+
+int getChange (int bal, int total)
+{
+	return bal - total;
 }
 
 
-int acceptMoney()
+int acceptMoney(int noOfItems)
 {
-	printf("\nPlease enjoy your item(s)\n");
+	system("cls");
+	
+	if (noOfItems == 1)
+	{
+		printf("\nPlease enjoy your item\n");
+	}
+	else
+	printf("\n*-* Please enjoy your items! *-*\n");
+	
+	printf("\n\n");
 	
 	system("pause");
 	system("cls");
