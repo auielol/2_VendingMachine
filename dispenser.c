@@ -101,7 +101,7 @@ int getProductCost (int cost, int NoOfItems)
 
 int makeSale(int total)
 {
-	currentBalance(total);
+	currentBalance(total, 0);
 	
 	return 0;
 }
