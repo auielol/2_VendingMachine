@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <windows.h>
 
-int currentBalance(int total, int Bal, int noOfItems);
+int currentBalance(int total, int Bal, int qty);
 int getChange (int Bal, int total);
-int acceptMoney(int noOfItems);
+int acceptMoney(int qty);
 

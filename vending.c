@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 int showSelection()
 {
-	int select, noOfItems;
+	int select, qty;
 	
 	printf("\nPlease Choose from the Selection");
 	
@@ -34,43 +34,47 @@ int showSelection()
 			system("cls");
 			
 			printf("\nHow many BEVERAGES would you like to purchase: ");
-			scanf("%d", &noOfItems);
+			scanf("%d", &qty);
 			
 			system("cls");
 			
-			sellProduct(noOfItems, select);
+			sellProduct(qty, select);
 			break;
 		case 2:
 			system("cls");
 			
 			printf("\nHow many SNACKS would you like to purchase: ");
-			scanf("%d", &noOfItems);
+			scanf("%d", &qty);
 			
 			system("cls");
 			
-			sellProduct(noOfItems, select);
+			sellProduct(qty, select);
 			break;
 		case 3:
 			system("cls");
 			
 			printf("\nHow many TOYS would you like to purchase: ");
-			scanf("%d", &noOfItems);
+			scanf("%d", &qty);
 			
 			system("cls");
 			
-			sellProduct(noOfItems, select);
+			sellProduct(qty, select);
 			break;
 		case 4:
 			system("cls");
 			
 			printf("\nHow many MANGAS would you like to purchase: ");
-			scanf("%d", &noOfItems);
+			scanf("%d", &qty);
 			
 			system("cls");
 			
-			sellProduct(noOfItems, select);
+			sellProduct(qty, select);
 			break;
 		case 5:
+			system("cls");
+			
+			printf("Shutting Down...");
+			
 			return 0;
 		default:
 				printf("INVALID INPUT\n");
@@ -80,8 +84,8 @@ int showSelection()
 	}
 }
 
-int sellProduct(int noOfItems, int select)
+int sellProduct(int qty, int select)
 {
-	getCount(noOfItems, select);
+	getCount(qty, select);
 }
 

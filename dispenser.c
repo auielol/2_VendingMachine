@@ -2,33 +2,37 @@
 #include "dispenser.h"
 #include "cashregister.h"
 
-int getCount(int noOfItems, int select)
+int getCount(int qty, int select)
 {
 	struct Inventory beverage;
 	{
-		beverage.qty = 100;
+		beverage.nameOfItem = "CocaCola";
+		beverage.numberOfItems = 100;
 		beverage.cost = 50;
 	};
 	struct Inventory snack;
 	{
-		snack.qty = 100;
+		snack.nameOfItem = "KitKat";
+		snack.numberOfItems = 100;
 		snack.cost = 100;
 	};
 	struct Inventory toy;
 	{
-		toy.qty = 100;
+		toy.nameOfItem = "Gacha";
+		toy.numberOfItems = 100;
 		toy.cost = 200;
 	};
 	struct Inventory manga;
 	{
-		manga.qty = 100;
+		manga.nameOfItem = "KimetsuNoYaiba";
+		manga.numberOfItems = 100;
 		manga.cost = 500;
 	}
 	
 	switch(select)
 	{
 		case 1:
-			if (beverage.qty = 0)
+			if (beverage.numberOfItems = 0)
 			{
 				printf("Item is unavailable");
 				
@@ -38,12 +42,12 @@ int getCount(int noOfItems, int select)
 			}
 			else
 			{
-				getProductCost(beverage.cost, noOfItems);
+				getProductCost(beverage.cost, qty);
 				
 				break;
 			}
 		case 2:
-			if (snack.qty = 0)
+			if (snack.numberOfItems = 0)
 			{
 				printf("Item is unavailable");
 				
@@ -53,12 +57,12 @@ int getCount(int noOfItems, int select)
 			}
 			else
 			{
-				getProductCost(snack.cost, noOfItems);
+				getProductCost(snack.cost, qty);
 				
 				break;
 			}
 		case 3:
-			if (toy.qty = 0)
+			if (toy.numberOfItems = 0)
 			{
 				printf("Item is unavailable");
 				
@@ -68,12 +72,12 @@ int getCount(int noOfItems, int select)
 			}
 			else
 			{
-				getProductCost(toy.cost, noOfItems);
+				getProductCost(toy.cost, qty);
 				
 				break;
 			}
 		case 4:
-			if (manga.qty = 0)
+			if (manga.numberOfItems = 0)
 			{
 				printf("Item is unavailable");
 				
@@ -83,25 +87,25 @@ int getCount(int noOfItems, int select)
 			}
 			else
 			{
-				getProductCost(manga.cost, noOfItems);
+				getProductCost(manga.cost, qty);
 				
 				break;
 			}
 	}
 }
 
-int getProductCost (int cost, int noOfItems)
+int getProductCost (int cost, int qty)
 {
 	int total;
 	
-	total = noOfItems*cost;
+	total = qty*cost;
 	
-	makeSale(total, noOfItems);
+	makeSale(total, qty);
 }
 
-int makeSale(int total, int noOfItems)
+int makeSale(int total, int qty)
 {
-	currentBalance(total, 0, noOfItems);
+	currentBalance(total, 0, qty);
 	
 	return 0;
 }

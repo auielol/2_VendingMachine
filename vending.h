@@ -2,10 +2,11 @@
 #include <stdlib.h>
 
 int showSelection();
-int sellProduct(int noOfItems, int select);
+int sellProduct(int qty, int select);
 
 struct Inventory
 {
-	int qty;
+	char nameOfItem[25];
+	int numberOfItems;
 	int cost;
 };

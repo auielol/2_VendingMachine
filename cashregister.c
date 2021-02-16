@@ -2,7 +2,7 @@
 #include "dispenser.h"
 #include "cashregister.h"
 
-int currentBalance(int total, int bal, int noOfItems)
+int currentBalance(int total, int bal, int qty)
 {
 	int newBal, remBal, tries, refund;
 	
@@ -16,7 +16,7 @@ int currentBalance(int total, int bal, int noOfItems)
 		
 	if (bal == total)
 	{
-		return acceptMoney(noOfItems);
+		return acceptMoney(qty);
 	}
 	else if (bal < total)
 	{
@@ -26,17 +26,20 @@ int currentBalance(int total, int bal, int noOfItems)
 	}
 	else if (bal > total)
 	{
-		system("cls");
-		
-		printf("\nPlease Take Your Change: JPY %d", getChange(bal, total));
-		printf("\n\nIf change is insufficient, please inform the staff.");
+		getChange(bal, total);
 	}
 	}
+	
 	refund = bal;
+	
+	tries++;
 	
 	system("cls");
 	
-	printf("\nInsufficient Money. Money Refunded: JPY %d", refund);
+	if (tries > 2)
+	{
+		printf("\nInsufficient Money. Money Refunded: JPY %d", refund);
+	}
 	
 	printf("\n\n");
 	
@@ -48,15 +51,25 @@ int currentBalance(int total, int bal, int noOfItems)
 
 int getChange (int bal, int total)
 {
-	return bal - total;
+	int change;
+	
+	change = bal - total;
+	
+	printf("\nPlease Take Your Change: JPY %d", change);
+	printf("\n\nIf change is insufficient, please inform the staff.\n\n");
+	
+	system("pause");
+	system("cls");
+	
+	return main();
 }
 
 
-int acceptMoney(int noOfItems)
+int acceptMoney(int qty)
 {
 	system("cls");
 	
-	if (noOfItems == 1)
+	if (qty == 1)
 	{
 		printf("\nPlease enjoy your item\n");
 	}
