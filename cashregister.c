@@ -26,7 +26,9 @@ int currentBalance(int total, int bal, int qty)
 	}
 	else if (bal > total)
 	{
-		getChange(bal, total);
+		getChange(bal, total, qty);
+		
+		return 0;
 	}
 	}
 	
@@ -49,11 +51,13 @@ int currentBalance(int total, int bal, int qty)
 	return main();
 }
 
-int getChange (int bal, int total)
+int getChange (int bal, int total, int qty)
 {
 	int change;
 	
 	change = bal - total;
+	
+	system("cls");
 	
 	printf("\nPlease Take Your Change: JPY %d", change);
 	printf("\n\nIf change is insufficient, please inform the staff.\n\n");
@@ -61,7 +65,7 @@ int getChange (int bal, int total)
 	system("pause");
 	system("cls");
 	
-	return main();
+	return acceptMoney(qty);
 }
 
 
@@ -76,7 +80,7 @@ int acceptMoney(int qty)
 	else
 	printf("\n*-* Please enjoy your items! *-*\n");
 	
-	printf("\n\n");
+	printf("\n");
 	
 	system("pause");
 	system("cls");

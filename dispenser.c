@@ -4,35 +4,35 @@
 
 int getCount(int qty, int select)
 {
-	struct Inventory beverage;
+	struct Inventory candies;
 	{
-		beverage.nameOfItem = "CocaCola";
-		beverage.numberOfItems = 100;
-		beverage.cost = 50;
+		strcpy(candies.nameOfItem, "Mentos");
+		candies.numberOfItems = 100;
+		candies.cost = 50;
 	};
-	struct Inventory snack;
+	struct Inventory chips;
 	{
-		snack.nameOfItem = "KitKat";
-		snack.numberOfItems = 100;
-		snack.cost = 100;
+		strcpy(chips.nameOfItem, "Doritos");
+		chips.numberOfItems = 100;
+		chips.cost = 100;
 	};
-	struct Inventory toy;
+	struct Inventory cookies;
 	{
-		toy.nameOfItem = "Gacha";
-		toy.numberOfItems = 100;
-		toy.cost = 200;
+		strcpy(cookies.nameOfItem, "Oreo");
+		cookies.numberOfItems = 100;
+		cookies.cost = 200;
 	};
-	struct Inventory manga;
+	struct Inventory soda;
 	{
-		manga.nameOfItem = "KimetsuNoYaiba";
-		manga.numberOfItems = 100;
-		manga.cost = 500;
+		strcpy(soda.nameOfItem, "Pepsi");
+		soda.numberOfItems = 100;
+		soda.cost = 500;
 	}
 	
 	switch(select)
 	{
 		case 1:
-			if (beverage.numberOfItems = 0)
+			if (candies.numberOfItems = 0)
 			{
 				printf("Item is unavailable");
 				
@@ -42,12 +42,12 @@ int getCount(int qty, int select)
 			}
 			else
 			{
-				getProductCost(beverage.cost, qty);
+				getProductCost(candies.cost, qty);
 				
 				break;
 			}
 		case 2:
-			if (snack.numberOfItems = 0)
+			if (chips.numberOfItems = 0)
 			{
 				printf("Item is unavailable");
 				
@@ -57,12 +57,12 @@ int getCount(int qty, int select)
 			}
 			else
 			{
-				getProductCost(snack.cost, qty);
+				getProductCost(chips.cost, qty);
 				
 				break;
 			}
 		case 3:
-			if (toy.numberOfItems = 0)
+			if (cookies.numberOfItems = 0)
 			{
 				printf("Item is unavailable");
 				
@@ -72,12 +72,12 @@ int getCount(int qty, int select)
 			}
 			else
 			{
-				getProductCost(toy.cost, qty);
+				getProductCost(cookies.cost, qty);
 				
 				break;
 			}
 		case 4:
-			if (manga.numberOfItems = 0)
+			if (soda.numberOfItems = 0)
 			{
 				printf("Item is unavailable");
 				
@@ -87,7 +87,7 @@ int getCount(int qty, int select)
 			}
 			else
 			{
-				getProductCost(manga.cost, qty);
+				getProductCost(soda.cost, qty);
 				
 				break;
 			}

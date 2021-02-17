@@ -19,10 +19,10 @@ int showSelection()
 	
 	printf("\nPlease Choose from the Selection");
 	
-	printf("\n[1] BEVERAGE (JPY 50)");
-	printf("\n[2] SNACK (JPY 100)");
-	printf("\n[3] TOY (JPY 200)");
-	printf("\n[4] MANGA (JPY 500)");
+	printf("\n[1] CANDIES (JPY 50)");
+	printf("\n[2] CHIPS (JPY 100)");
+	printf("\n[3] COOKIES (JPY 200)");
+	printf("\n[4] SODA (JPY 500)");
 	printf("\n[5] Shut Down");
 	
 	printf("\n\nSelection: ");
@@ -33,7 +33,7 @@ int showSelection()
 		case 1:
 			system("cls");
 			
-			printf("\nHow many BEVERAGES would you like to purchase: ");
+			printf("\nHow many CANDIES would you like to purchase: ");
 			scanf("%d", &qty);
 			
 			system("cls");
@@ -43,7 +43,7 @@ int showSelection()
 		case 2:
 			system("cls");
 			
-			printf("\nHow many SNACKS would you like to purchase: ");
+			printf("\nHow many CHIPS would you like to purchase: ");
 			scanf("%d", &qty);
 			
 			system("cls");
@@ -53,7 +53,7 @@ int showSelection()
 		case 3:
 			system("cls");
 			
-			printf("\nHow many TOYS would you like to purchase: ");
+			printf("\nHow many COOKIES would you like to purchase: ");
 			scanf("%d", &qty);
 			
 			system("cls");
@@ -63,7 +63,7 @@ int showSelection()
 		case 4:
 			system("cls");
 			
-			printf("\nHow many MANGAS would you like to purchase: ");
+			printf("\nHow many SODA would you like to purchase: ");
 			scanf("%d", &qty);
 			
 			system("cls");
@@ -77,10 +77,15 @@ int showSelection()
 			
 			return 0;
 		default:
-				printf("INVALID INPUT\n");
-				system("pause");
-				system("cls");
-				showSelection();
+			system("cls");
+			
+			printf("\nINVALID INPUT\n\n");
+			
+			system("pause");
+			
+			system("cls");
+			
+			showSelection();
 	}
 }
 
